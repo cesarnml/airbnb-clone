@@ -14,6 +14,7 @@ type Props = {
   currentUser?: SafeUser | null
 }
 export const UserMenu = ({ currentUser }: Props) => {
+  console.log('currentUser:', currentUser)
   const loginModal = useLoginModal()
   const registerModal = useRegisterModal()
   const [isOpen, setIsOpen] = useState(false)
@@ -37,7 +38,7 @@ export const UserMenu = ({ currentUser }: Props) => {
         >
           <AiOutlineMenu />
           <div className='hidden md:block'>
-            <Avatar />
+            <Avatar src={currentUser?.image} />
           </div>
         </div>
       </div>
