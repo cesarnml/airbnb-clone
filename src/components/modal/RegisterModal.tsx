@@ -45,31 +45,33 @@ export const RegisterModal = () => {
   const bodyContent = (
     <div className='flex flex-col gap-4'>
       <Heading title='Welcome to Airbnb' subtitle='Create an account!' />
-      <Input
-        id='email'
-        label='Email'
-        disabled={isLoading}
-        register={register}
-        errors={errors}
-        required
-      />
-      <Input
-        id='name'
-        label='Name'
-        disabled={isLoading}
-        register={register}
-        errors={errors}
-        required
-      />
-      <Input
-        id='password'
-        type='password'
-        label='Password'
-        disabled={isLoading}
-        register={register}
-        errors={errors}
-        required
-      />
+      <form className='flex flex-col gap-4'>
+        <Input
+          id='email'
+          label='Email'
+          disabled={isLoading}
+          register={register}
+          errors={errors}
+          required
+        />
+        <Input
+          id='name'
+          label='Name'
+          disabled={isLoading}
+          register={register}
+          errors={errors}
+          required
+        />
+        <Input
+          id='password'
+          type='password'
+          label='Password'
+          disabled={isLoading}
+          register={register}
+          errors={errors}
+          required
+        />
+      </form>
     </div>
   )
 
