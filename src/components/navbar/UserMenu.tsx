@@ -1,17 +1,17 @@
 'use client'
 
+import { useLoginModal } from '$/hooks/useLoginModal'
+import { useRegisterModal } from '$/hooks/useRegisterModal'
 import { noop } from '$/lib/helpers'
+import { SafeUser } from '$/types'
+import { signOut } from 'next-auth/react'
+import { useCallback, useState } from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { Avatar } from '../Avatar'
-import { useCallback, useState } from 'react'
 import { MenuItem } from './MenuItem'
-import { useRegisterModal } from '$/hooks/useRegisterModal'
-import { useLoginModal } from '$/hooks/useLoginModal'
-import { User } from '@prisma/client'
-import { signOut } from 'next-auth/react'
 
 type Props = {
-  currentUser?: User | null
+  currentUser?: SafeUser | null
 }
 export const UserMenu = ({ currentUser }: Props) => {
   const loginModal = useLoginModal()
