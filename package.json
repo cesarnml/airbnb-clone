@@ -21,6 +21,7 @@
     "bcrypt": "^5.1.0",
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
+    "leaflet": "^1.9.3",
     "next": "13.2.4",
     "next-auth": "^4.20.1",
     "query-string": "^8.1.0",
@@ -28,7 +29,10 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.43.9",
     "react-icons": "^4.8.0",
+    "react-leaflet": "^4.2.1",
+    "react-select": "^5.7.2",
     "typescript": "5.0.3",
+    "world-countries": "^4.0.0",
     "zustand": "^4.3.7"
   },
   "devDependencies": {
@@ -37,6 +41,7 @@
     "@testing-library/react": "^14.0.0",
     "@types/bcrypt": "^5.0.0",
     "@types/jest": "^29.5.0",
+    "@types/leaflet": "^1.9.3",
     "@types/testing-library__jest-dom": "^5.14.5",
     "@vitejs/plugin-react": "^3.1.0",
     "@vitest/coverage-c8": "^0.29.8",
