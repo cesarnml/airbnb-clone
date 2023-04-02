@@ -9,26 +9,35 @@ import { useCallback, useState } from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { Avatar } from '../Avatar'
 import { MenuItem } from './MenuItem'
+import { useRentModal } from '$/hooks/useRentModal'
 
 type Props = {
   currentUser?: SafeUser | null
 }
 export const UserMenu = ({ currentUser }: Props) => {
-  console.log('currentUser:', currentUser)
   const loginModal = useLoginModal()
   const registerModal = useRegisterModal()
+  const rentModal = useRentModal()
+
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleOpen = useCallback(() => {
     setIsOpen((prev) => !prev)
   }, [])
 
+  const onRent = useCallback(() => {
+    if (!currentUser) {
+      return loginModal.onOpen()
+    }
+    rentModal.onOpen()
+  }, [currentUser, loginModal, rentModal])
+
   return (
     <div className='relative'>
       <div className='flex flex-row items-center gap-3'>
         <div
           className='hidden cursor-pointer rounded-full px-4 py-3 text-sm font-semibold transition hover:bg-neutral-100 md:block'
-          onClick={noop}
+          onClick={onRent}
         >
           AirBnB your home
         </div>
@@ -51,7 +60,7 @@ export const UserMenu = ({ currentUser }: Props) => {
                 <MenuItem onClick={noop} label='My Favorites' />
                 <MenuItem onClick={noop} label='My reservations' />
                 <MenuItem onClick={noop} label='My properties' />
-                <MenuItem onClick={noop} label='Airbnb my home' />
+                <MenuItem onClick={rentModal.onOpen} label='Airbnb my home' />
                 <MenuItem onClick={signOut} label='Logout' />
               </>
             ) : (

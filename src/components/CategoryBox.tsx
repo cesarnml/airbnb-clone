@@ -28,7 +28,7 @@ export const CategoryBox = ({ label, description, icon: Icon, selected }: Props)
       category: label,
     }
 
-    if (params?.get('category') === 'label') {
+    if (params?.get('category') === label) {
       delete updatedQuery.category
     }
 
@@ -39,6 +39,7 @@ export const CategoryBox = ({ label, description, icon: Icon, selected }: Props)
       },
       { skipNull: true },
     )
+
     router.push(url)
   }, [label, params, router])
 
