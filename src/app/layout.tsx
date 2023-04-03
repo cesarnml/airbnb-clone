@@ -40,7 +40,7 @@ export default async function RootLayout({ children }: Props) {
           <Navbar currentUser={currentUser} />
         </ClientOnly>
         <Analytics />
-        <div className='pb-20 pt-32'>{children}</div>
+        <div className='py-8'>{children}</div>
       </body>
     </html>
   )
