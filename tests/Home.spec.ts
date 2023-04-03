@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test'
 
 test('sign in/logout/sign in', async ({ page }) => {
-  await page.goto('http://localhost:3000/')
+  await page.goto('/')
 
   const avatar = page.getByRole('img', { name: /avatar/i })
 
