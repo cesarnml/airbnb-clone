@@ -2,7 +2,7 @@
 
 import { IconType } from 'react-icons'
 
-interface Props {
+type Props = {
   icon: IconType
   label: string
   description: string

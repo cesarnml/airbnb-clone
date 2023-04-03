@@ -12,7 +12,7 @@ const Map = dynamic(() => import('../Map'), {
   ssr: false,
 })
 
-interface ListingInfoProps {
+type Props = {
   user: SafeUser | null
   description: string
   guestCount: number
@@ -28,7 +28,7 @@ interface ListingInfoProps {
   locationValue: string
 }
 
-const ListingInfo: React.FC<ListingInfoProps> = ({
+const ListingInfo = ({
   user,
   description,
   guestCount,
@@ -36,7 +36,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
   bathroomCount,
   category,
   locationValue,
-}) => {
+}: Props) => {
   const { getByValue } = useCountries()
 
   const coordinates = getByValue(locationValue)?.latlng

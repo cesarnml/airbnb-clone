@@ -1,12 +1,12 @@
 import prisma from '$/lib/prismadb'
 
-interface IParams {
+type Params = {
   listingId?: string
   userId?: string
   authorId?: string
 }
 
-export default async function getReservations(params: IParams) {
+export default async function getReservations(params: Params) {
   try {
     const { listingId, userId, authorId } = params
 
