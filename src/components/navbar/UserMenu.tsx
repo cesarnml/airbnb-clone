@@ -10,11 +10,13 @@ import { AiOutlineMenu } from 'react-icons/ai'
 import { Avatar } from '../Avatar'
 import { MenuItem } from './MenuItem'
 import { useRentModal } from '$/hooks/useRentModal'
+import { useRouter } from 'next/navigation'
 
 type Props = {
   currentUser?: SafeUser | null
 }
 export const UserMenu = ({ currentUser }: Props) => {
+  const router = useRouter()
   const loginModal = useLoginModal()
   const registerModal = useRegisterModal()
   const rentModal = useRentModal()
@@ -56,9 +58,9 @@ export const UserMenu = ({ currentUser }: Props) => {
           <div className='flex cursor-pointer flex-col'>
             {currentUser ? (
               <>
-                <MenuItem onClick={noop} label='My Trips' />
-                <MenuItem onClick={noop} label='My Favorites' />
-                <MenuItem onClick={noop} label='My reservations' />
+                <MenuItem onClick={() => router.push('/trips')} label='My trips' />
+                <MenuItem onClick={noop} label='My favorites' />
+                <MenuItem onClick={() => router.push('/reservations')} label='My reservations' />
                 <MenuItem onClick={noop} label='My properties' />
                 <MenuItem onClick={rentModal.onOpen} label='Airbnb my home' />
                 <MenuItem onClick={signOut} label='Logout' />

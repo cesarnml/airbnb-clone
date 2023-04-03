@@ -14,46 +14,31 @@ type Props = {
   currentUser?: SafeUser | null
 }
 
-const TripsClient = ({ reservations, currentUser }: Props) => {
+const ReservationsClient = ({ reservations, currentUser }: Props) => {
   const router = useRouter()
   const [deletingId, setDeletingId] = useState('')
 
   const onCancel = useCallback(
-    (id: string) => {
+    async (id: string) => {
       setDeletingId(id)
 
-      axios
-        .delete(`/api/reservations/${id}`)
-        .then(() => {
-          toast.success('Reservation cancelled')
-          router.refresh()
-        })
-        .catch((error) => {
-          toast.error(error?.response?.data?.error)
-        })
-        .finally(() => {
-          setDeletingId('')
-        })
+      try {
+        await axios.delete(`/api/reservations/${id}`)
+        toast.success('Reservation cancelled')
+        router.refresh()
+      } catch (err) {
+        toast.error('Something went wrong.')
+      }
+
+      setDeletingId('')
     },
     [router],
   )
 
   return (
     <Container>
-      <Heading title='Trips' subtitle="Where you've been and where you're going" />
-      <div
-        className='
-          mt-10
-          grid 
-          grid-cols-1 
-          gap-8 
-          sm:grid-cols-2 
-          md:grid-cols-3
-          lg:grid-cols-4
-          xl:grid-cols-5
-          2xl:grid-cols-6
-        '
-      >
+      <Heading title='Reservations' subtitle='Bookings on your properties' />
+      <div className='mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6'>
         {reservations.map((reservation: any) => (
           <ListingCard
             key={reservation.id}
@@ -62,7 +47,7 @@ const TripsClient = ({ reservations, currentUser }: Props) => {
             actionId={reservation.id}
             onAction={onCancel}
             disabled={deletingId === reservation.id}
-            actionLabel='Cancel reservation'
+            actionLabel='Cancel guest reservation'
             currentUser={currentUser}
           />
         ))}
@@ -71,4 +56,4 @@ const TripsClient = ({ reservations, currentUser }: Props) => {
   )
 }
 
-export default TripsClient
+export default ReservationsClient
