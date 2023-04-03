@@ -2,7 +2,6 @@
 
 import { useLoginModal } from '$/hooks/useLoginModal'
 import { useRegisterModal } from '$/hooks/useRegisterModal'
-import { noop } from '$/lib/helpers'
 import { SafeUser } from '$/types'
 import { signOut } from 'next-auth/react'
 import { useCallback, useState } from 'react'
@@ -61,7 +60,7 @@ export const UserMenu = ({ currentUser }: Props) => {
                 <MenuItem onClick={() => router.push('/trips')} label='My trips' />
                 <MenuItem onClick={() => router.push('/favorites')} label='My favorites' />
                 <MenuItem onClick={() => router.push('/reservations')} label='My reservations' />
-                <MenuItem onClick={noop} label='My properties' />
+                <MenuItem onClick={() => router.push('/properties')} label='My properties' />
                 <MenuItem onClick={rentModal.onOpen} label='Airbnb my home' />
                 <MenuItem onClick={signOut} label='Logout' />
               </>

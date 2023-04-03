@@ -3,10 +3,13 @@ import { Container } from '$/components/Container'
 import { EmptyState } from '$/components/EmptyState'
 import { ListingCard } from '$/components/ListingCard'
 import getCurrentUser from './actions/getCurrentUser'
-import getListings from './actions/getListings'
+import getListings, { ListingParams } from './actions/getListings'
 
-export default async function Home() {
-  const listings = await getListings()
+export type Props = {
+  searchParams: ListingParams
+}
+export default async function Home({ searchParams }: Props) {
+  const listings = await getListings(searchParams)
   const currentUser = await getCurrentUser()
 
   const isEmpty = !listings.length
