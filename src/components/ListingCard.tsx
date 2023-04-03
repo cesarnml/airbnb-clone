@@ -1,8 +1,8 @@
 'use client'
 
 import { useCountries } from '$/hooks/useCountries'
-import { SafeUser } from '$/types'
-import { Listing, Reservation } from '@prisma/client'
+import { SafeListing, SafeUser } from '$/types'
+import { Reservation } from '@prisma/client'
 import { format } from 'date-fns'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
@@ -12,7 +12,7 @@ import { Button } from './Button'
 
 type Props = {
   currentUser: SafeUser | null
-  data: Listing
+  data: SafeListing
   reservation?: Reservation
   onAction?: (id: string) => void
   disabled?: boolean
