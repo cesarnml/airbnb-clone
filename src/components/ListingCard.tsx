@@ -11,7 +11,7 @@ import { HeartButton } from './HeartButton'
 import { Button } from './Button'
 
 type Props = {
-  currentUser: SafeUser | null
+  currentUser?: SafeUser | null
   data: SafeListing
   reservation?: Reservation
   onAction?: (id: string) => void

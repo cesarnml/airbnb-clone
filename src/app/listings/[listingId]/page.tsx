@@ -13,6 +13,7 @@ const ListingPage = async ({ params }: { params: Params }) => {
   const listing = await getListingById(params)
   const reservations = await getReservations(params)
   const currentUser = await getCurrentUser()
+
   if (!listing) {
     return (
       <ClientOnly>
