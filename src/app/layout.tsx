@@ -5,6 +5,7 @@ import { RegisterModal } from '$/components/modal/RegisterModal'
 import { LoginModal } from '$/components/modal/LoginModal'
 import { Navbar } from '$/components/navbar/Navbar'
 import { ToasterProvider } from './providers/ToasterProvider'
+import { Analytics } from '@vercel/analytics/react'
 
 import './globals.css'
 import getCurrentUser from './actions/getCurrentUser'
@@ -38,6 +39,7 @@ export default async function RootLayout({ children }: Props) {
           <SearchModal />
           <Navbar currentUser={currentUser} />
         </ClientOnly>
+        <Analytics />
         <div className='pb-20 pt-32'>{children}</div>
       </body>
     </html>
