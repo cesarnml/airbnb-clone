@@ -1,4 +1,4 @@
-import prisma from '$/lib/prismadb'
+import { prisma } from '$/lib/prisma'
 
 export interface ListingParams {
   userId?: string
