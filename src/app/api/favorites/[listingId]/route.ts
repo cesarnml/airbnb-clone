@@ -1,5 +1,5 @@
 import getCurrentUser from '$/app/actions/getCurrentUser'
-import prisma from '$/lib/prismadb'
+import { prisma } from '$/lib/prisma'
 import { NextResponse } from 'next/server'
 
 type Params = {
