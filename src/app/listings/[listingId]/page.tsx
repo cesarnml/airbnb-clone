@@ -1,6 +1,9 @@
+import getCurrentUser from '$/app/actions/getCurrentUser'
 import { getListingById } from '$/app/actions/getListingById'
+import getReservations from '$/app/actions/getReservations'
 import { ClientOnly } from '$/components/ClientOnly'
 import { EmptyState } from '$/components/EmptyState'
+import { ListingClient } from './ListingClient'
 
 type Params = {
   listingId?: string
@@ -8,7 +11,8 @@ type Params = {
 
 const ListingPage = async ({ params }: { params: Params }) => {
   const listing = await getListingById(params)
-
+  const reservations = await getReservations(params)
+  const currentUser = await getCurrentUser()
   if (!listing) {
     return (
       <ClientOnly>
@@ -17,7 +21,11 @@ const ListingPage = async ({ params }: { params: Params }) => {
     )
   }
 
-  return <ClientOnly>{listing.title}</ClientOnly>
+  return (
+    <ClientOnly>
+      <ListingClient listing={listing} reservations={reservations} currentUser={currentUser} />{' '}
+    </ClientOnly>
+  )
 }
 
 export default ListingPage
