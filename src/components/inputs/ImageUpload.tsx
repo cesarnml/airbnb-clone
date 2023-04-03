@@ -33,7 +33,8 @@ export const ImageUpload = ({ onChange, value }: Props) => {
       {({ open }) => {
         return (
           <div
-            className='relative flex cursor-pointer flex-col items-center justify-center gap-4 border-2 border-dashed border-neutral-300 text-neutral-600 transition hover:opacity-70'
+            // TODO: Why is h-80 needed here?
+            className='relative flex h-80 cursor-pointer flex-col items-center justify-center gap-4 border-2 border-dashed border-neutral-300 text-neutral-600 transition hover:opacity-70'
             onClick={() => open?.()}
           >
             <TbPhotoPlus size={50} />
