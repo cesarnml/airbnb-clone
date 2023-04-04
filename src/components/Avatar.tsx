@@ -14,6 +14,7 @@ export const Avatar = ({ src }: Props) => {
       width='30'
       alt='Avatar'
       src={src ?? '/images/placeholder.jpg'}
+      priority
     />
   )
 }

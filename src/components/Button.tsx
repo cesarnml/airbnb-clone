@@ -15,9 +15,9 @@ type Props = {
 export const Button = ({ label, onClick, disabled, outline, small, icon: Icon }: Props) => {
   return (
     <button
-      className={`relative w-full rounded-lg transition hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-70 ${
-        outline ? 'border-black bg-white text-black' : 'border-rose-500 bg-rose-500 text-white'
-      } ${small ? 'border py-1 text-sm font-light' : 'text-md border-2 py-3 font-semibold'}`}
+      className={`relative w-full rounded-lg transition hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-70
+      ${outline ? 'border-black bg-white text-black' : 'border-rose-500 bg-rose-500 text-white'}
+      ${small ? 'border py-1 text-sm font-light' : 'text-md border-2 py-3 font-semibold'}`}
       onClick={onClick}
       disabled={disabled}
     >

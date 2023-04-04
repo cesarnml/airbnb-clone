@@ -1,5 +1,3 @@
-'use client'
-
 import { useSearchParams, useRouter } from 'next/navigation'
 import { IconType } from 'react-icons'
 import qs from 'query-string'
@@ -7,14 +5,14 @@ import { useCallback } from 'react'
 
 type Props = {
   label: string
-  description: string
   icon: IconType
-  selected?: boolean
 }
 
-export const CategoryBox = ({ label, description, icon: Icon, selected }: Props) => {
+export const CategoryBox = ({ label, icon: Icon }: Props) => {
   const router = useRouter()
   const params = useSearchParams()
+
+  const isSelected = params?.get('category') === label
 
   const handleClick = useCallback(() => {
     let currentQuery = {}
@@ -28,7 +26,7 @@ export const CategoryBox = ({ label, description, icon: Icon, selected }: Props)
       category: label,
     }
 
-    if (params?.get('category') === label) {
+    if (isSelected) {
       delete updatedQuery.category
     }
 
@@ -41,25 +39,17 @@ export const CategoryBox = ({ label, description, icon: Icon, selected }: Props)
     )
 
     router.push(url)
-  }, [label, params, router])
+  }, [isSelected, label, params, router])
 
   return (
     <div
+      className={`flex cursor-pointer flex-col items-center justify-center gap-2 border-b-2 p-3 transition hover:text-neutral-800 ${
+        isSelected
+          ? 'border-b-neutral-800 text-neutral-800'
+          : 'border-b-transparent text-neutral-500'
+      }`}
       onClick={handleClick}
-      className={`
-      flex 
-      cursor-pointer 
-      flex-col 
-      items-center 
-      justify-center 
-      gap-2 
-      border-b-2 
-      p-3 
-      transition
-       hover:text-neutral-800 
-       ${
-         selected ? 'border-b-neutral-800 text-neutral-800' : 'border-transparent text-neutral-500'
-       }`}
+      data-testid='category-box'
     >
       <Icon size={26} />
       <div className='font-md text-sm'>{label}</div>

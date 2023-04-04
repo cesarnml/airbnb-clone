@@ -2,7 +2,6 @@
 
 import { useRouter } from 'next/navigation'
 import { Heading } from './Heading'
-import { noop } from '$/lib/helpers'
 import { Button } from './Button'
 
 type Props = {

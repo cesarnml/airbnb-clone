@@ -104,12 +104,9 @@ export const Categories = () => {
     <Container>
       <div className='flex flex-row items-center justify-between overflow-x-auto pt-4'>
         {categories.map((item) => (
-          <CategoryBox
-            key={item.label}
-            label={item.label}
-            description={item.description}
-            icon={item.icon}
-          />
+          <div key={item.label}>
+            <CategoryBox label={item.label} icon={item.icon} />
+          </div>
         ))}
       </div>
     </Container>

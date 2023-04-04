@@ -13,7 +13,6 @@ import { Heading } from '../Heading'
 import { Input } from '../inputs/Input'
 import toast from 'react-hot-toast'
 import { Button } from '../Button'
-import { noop } from '$/lib/helpers'
 import { useRouter } from 'next/navigation'
 import { useRegisterModal } from '$/hooks/useRegisterModal'
 
