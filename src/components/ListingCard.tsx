@@ -5,10 +5,11 @@ import { SafeListing, SafeUser } from '$/types'
 import { Reservation } from '@prisma/client'
 import { format } from 'date-fns'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
 import { MouseEvent, useCallback, useMemo } from 'react'
 import { HeartButton } from './HeartButton'
 import { Button } from './Button'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 type Props = {
   currentUser?: SafeUser | null
@@ -62,10 +63,12 @@ export const ListingCard = ({
 
     return `${format(start, 'PP')} - ${format(end, 'PP')}`
   }, [reservation])
+
   return (
     <div
       className='group col-span-1 cursor-pointer'
       onClick={() => router.push(`/listings/${data.id}`)}
+      aria-label='listing card'
     >
       <div className='flex w-full flex-col gap-2'>
         <div className='relative aspect-square w-full overflow-hidden rounded-xl'>

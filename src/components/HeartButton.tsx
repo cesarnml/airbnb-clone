@@ -13,12 +13,16 @@ export const HeartButton = ({ listingId, currentUser }: Props) => {
   const { hasFavorited, toggleFavorite } = useFavorite({ listingId, currentUser })
 
   return (
-    <div onClick={toggleFavorite} className='relative cursor-pointer transition hover:opacity-80'>
+    <button
+      onClick={toggleFavorite}
+      className='relative cursor-pointer transition hover:opacity-80'
+      aria-label='favorite'
+    >
       <AiOutlineHeart size={28} className='-top-p[2px] absolute -right-[2px] fill-white' />
       <AiFillHeart
         size={24}
         className={`${hasFavorited ? 'fill-red-500' : 'fill-neutral-500/70'}`}
       />
-    </div>
+    </button>
   )
 }

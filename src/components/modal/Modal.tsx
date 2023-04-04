@@ -78,10 +78,11 @@ export const Modal = ({
                 <button
                   className='absolute left-9 border-0 p-1 transition hover:opacity-70'
                   onClick={handleClose}
+                  data-testid='modal close'
                 >
                   <IoMdClose size={18} />
                 </button>
-                <div className='text-lg font-semibold'>{title}</div>
+                <h2 className='text-lg font-semibold'>{title}</h2>
               </div>
               {/* BODY */}
               <div className='relative flex-auto p-6'>{body}</div>

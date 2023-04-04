@@ -22,7 +22,7 @@ export const useFavorite = ({ listingId, currentUser }: Params) => {
   }, [currentUser?.favoriteIds, listingId])
 
   const toggleFavorite = useCallback(
-    async (e: MouseEvent<HTMLDivElement>) => {
+    async (e: MouseEvent<HTMLButtonElement>) => {
       e.stopPropagation()
 
       if (!currentUser) {

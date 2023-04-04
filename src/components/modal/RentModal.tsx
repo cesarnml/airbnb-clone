@@ -115,7 +115,10 @@ export const RentModal = () => {
   let bodyContent = (
     <div className='flex flex-col gap-8'>
       <Heading title='Which of these best describes your place?' subtitle='Pick category' />
-      <div className='grid max-h-[50vh] grid-cols-1 gap-3 overflow-y-auto md:grid-cols-2'>
+      <div
+        className='grid max-h-[50vh] grid-cols-1 gap-3 overflow-y-auto md:grid-cols-2'
+        data-testid='category list'
+      >
         {categories.map((item) => (
           <div key={item.label} className='col-span-1'>
             <CategoryInput
