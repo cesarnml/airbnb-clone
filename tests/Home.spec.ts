@@ -22,7 +22,7 @@ test('a user can login and logout', async ({ page }) => {
   await logoutButton.click()
 
   await avatarMenu.click()
-  await expect(loginButton).toBeVisible({ timeout: 15000 })
+  await expect(loginButton).toBeVisible()
 })
 
 test.describe('user NOT logged in', () => {
@@ -53,7 +53,7 @@ test.describe('user NOT logged in', () => {
     const favoriteButton = page.getByRole('button', { name: /favorite/i }).first()
     await favoriteButton.click()
 
-    const loginModal = page.getByRole('heading', { name: /login/i })
+    const loginModal = page.getByRole('heading', { name: 'Login', exact: true })
     await expect(loginModal).toBeVisible()
   })
 
@@ -62,7 +62,7 @@ test.describe('user NOT logged in', () => {
 
     const createListingButton = page.getByRole('button', { name: /airbnb your home/i })
     await createListingButton.click()
-    const loginModal = page.getByRole('heading', { name: /login/i })
+    const loginModal = page.getByRole('heading', { name: 'Login', exact: true })
     await expect(loginModal).toBeVisible()
   })
 
@@ -90,7 +90,6 @@ test.describe('user IS logged in', () => {
     await page.locator('#email').type('test2@email.com')
     await page.locator('#password').type('password')
     await page.getByRole('button', { name: 'Continue', exact: true }).click()
-    await page.waitForLoadState('networkidle')
   })
 
   test('can create a listing', async ({ page }) => {
