@@ -27,7 +27,7 @@ test('it renders a disabled button when `disabled` prop is passed', async () => 
   render(<Button label={testLabel} onClick={noop} disabled />)
 
   const button = screen.getByRole('button', { name: RegExp(testLabel, 'i') })
-  expect(button).toHaveAttribute('disabled')
+  expect(button).toBeDisabled()
 })
 
 test('it renders an outline button when passed `outline` prop', async () => {
