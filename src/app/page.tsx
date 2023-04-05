@@ -29,6 +29,14 @@ export default async function Home({ searchParams }: Props) {
             <ListingCard key={listing.id} data={listing} currentUser={currentUser} />
           ))}
         </div>
+        <button
+          type='button'
+          onClick={() => {
+            throw new Error('Sentry Frontend Error')
+          }}
+        >
+          Throw error
+        </button>
       </Container>
     </ClientOnly>
   )
