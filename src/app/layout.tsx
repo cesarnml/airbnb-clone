@@ -1,16 +1,14 @@
-import { Nunito } from 'next/font/google'
-
 import { ClientOnly } from '$/components/ClientOnly'
-import { RegisterModal } from '$/components/modal/RegisterModal'
 import { LoginModal } from '$/components/modal/LoginModal'
-import { Navbar } from '$/components/navbar/Navbar'
-import { ToasterProvider } from './providers/ToasterProvider'
-import { Analytics } from '@vercel/analytics/react'
-
-import './globals.css'
-import getCurrentUser from './actions/getCurrentUser'
+import { RegisterModal } from '$/components/modal/RegisterModal'
 import { RentModal } from '$/components/modal/RentModal'
 import SearchModal from '$/components/modal/SearchModal'
+import { Navbar } from '$/components/navbar/Navbar'
+import { Analytics } from '@vercel/analytics/react'
+import { Nunito } from 'next/font/google'
+import getCurrentUser from './actions/getCurrentUser'
+import { ToasterProvider } from './providers/ToasterProvider'
+import './globals.css'
 
 export const metadata = {
   title: 'AirBnB',

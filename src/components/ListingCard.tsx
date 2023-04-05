@@ -5,11 +5,10 @@ import { SafeListing, SafeUser } from '$/types'
 import { Reservation } from '@prisma/client'
 import { format } from 'date-fns'
 import Image from 'next/image'
-import { MouseEvent, useCallback, useMemo } from 'react'
-import { HeartButton } from './HeartButton'
-import { Button } from './Button'
-import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { MouseEvent, useCallback, useMemo } from 'react'
+import { Button } from './Button'
+import { HeartButton } from './HeartButton'
 
 type Props = {
   currentUser?: SafeUser | null

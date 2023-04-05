@@ -1,7 +1,6 @@
-import { NextResponse } from 'next/server'
-
 import getCurrentUser from '$/app/actions/getCurrentUser'
 import { prisma } from '$/lib/prisma'
+import { NextResponse } from 'next/server'
 
 type Params = {
   listingId?: string

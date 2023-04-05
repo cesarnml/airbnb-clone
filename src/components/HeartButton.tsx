@@ -3,6 +3,7 @@
 import { useFavorite } from '$/hooks/useFavorite'
 import { SafeUser } from '$/types'
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
+import clsx from 'clsx'
 
 type Props = {
   listingId: string
@@ -21,7 +22,7 @@ export const HeartButton = ({ listingId, currentUser }: Props) => {
       <AiOutlineHeart size={28} className='-top-p[2px] absolute -right-[2px] fill-white' />
       <AiFillHeart
         size={24}
-        className={`${hasFavorited ? 'fill-red-500' : 'fill-neutral-500/70'}`}
+        className={clsx(hasFavorited ? 'fill-red-500' : 'fill-neutral-500/70')}
       />
     </button>
   )
