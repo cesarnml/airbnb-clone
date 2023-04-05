@@ -11,8 +11,8 @@ dependencies:
     specifier: 18.15.11
     version: 18.15.11
   '@types/react':
-    specifier: 18.0.31
-    version: 18.0.31
+    specifier: 18.0.33
+    version: 18.0.33
   '@types/react-dom':
     specifier: 18.0.11
     version: 18.0.11
@@ -72,7 +72,7 @@ dependencies:
     version: 4.2.1(leaflet@1.9.3)(react-dom@18.2.0)(react@18.2.0)
   react-select:
     specifier: ^5.7.2
-    version: 5.7.2(@types/react@18.0.31)(react-dom@18.2.0)(react@18.2.0)
+    version: 5.7.2(@types/react@18.0.33)(react-dom@18.2.0)(react@18.2.0)
   react-spinners:
     specifier: ^0.13.8
     version: 0.13.8(react-dom@18.2.0)(react@18.2.0)
@@ -427,7 +427,7 @@ packages:
     resolution: {integrity: sha512-G/YwXTkv7Den9mXDO7AhLWkE3q+I92B+VqAE+dYG4NGPaHZGvt3G8Q0p9vmE+sq7rTGphUbAvmQ9YpbfMQGGlA==}
     dev: false
 
-  /@emotion/react@11.10.6(@types/react@18.0.31)(react@18.2.0):
+  /@emotion/react@11.10.6(@types/react@18.0.33)(react@18.2.0):
     resolution: {integrity: sha512-6HT8jBmcSkfzO7mc+N1L9uwvOnlcGoix8Zn7srt+9ga0MjREo6lRpuVX0kzo6Jp6oTqDhREOFsygN6Ew4fEQbw==}
     peerDependencies:
       '@types/react': '*'
@@ -443,7 +443,7 @@ packages:
       '@emotion/use-insertion-effect-with-fallbacks': 1.0.0(react@18.2.0)
       '@emotion/utils': 1.2.0
       '@emotion/weak-memoize': 0.3.0
-      '@types/react': 18.0.31
+      '@types/react': 18.0.33
       hoist-non-react-statics: 3.3.2
       react: 18.2.0
     dev: false
@@ -1185,23 +1185,23 @@ packages:
   /@types/react-date-range@1.4.4:
     resolution: {integrity: sha512-9Y9NyNgaCsEVN/+O4HKuxzPbVjRVBGdOKRxMDcsTRWVG62lpYgnxefNckTXDWup8FvczoqPW0+ESZR6R1yymDg==}
     dependencies:
-      '@types/react': 18.0.31
+      '@types/react': 18.0.33
       date-fns: 2.29.3
     dev: true
 
   /@types/react-dom@18.0.11:
     resolution: {integrity: sha512-O38bPbI2CWtgw/OoQoY+BRelw7uysmXbWvw3nLWO21H1HSh+GOlqPuXshJfjmpNlKiiSDG9cc1JZAaMmVdcTlw==}
     dependencies:
-      '@types/react': 18.0.31
+      '@types/react': 18.0.33
 
   /@types/react-transition-group@4.4.5:
     resolution: {integrity: sha512-juKD/eiSM3/xZYzjuzH6ZwpP+/lejltmiS3QEzV/vmb/Q8+HfDmxu+Baga8UEMGBqV88Nbg4l2hY/K2DkyaLLA==}
     dependencies:
-      '@types/react': 18.0.31
+      '@types/react': 18.0.33
     dev: false
 
-  /@types/react@18.0.31:
-    resolution: {integrity: sha512-EEG67of7DsvRDU6BLLI0p+k1GojDLz9+lZsnCpCRTa/lOokvyPBvp8S5x+A24hME3yyQuIipcP70KJ6H7Qupww==}
+  /@types/react@18.0.33:
+    resolution: {integrity: sha512-sHxzVxeanvQyQ1lr8NSHaj0kDzcNiGpILEVt69g9S31/7PfMvNCKLKcsHw4lYKjs3cGNJjXSP4mYzX43QlnjNA==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.3
@@ -4129,7 +4129,7 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /react-select@5.7.2(@types/react@18.0.31)(react-dom@18.2.0)(react@18.2.0):
+  /react-select@5.7.2(@types/react@18.0.33)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-cTlJkQ8YjV6T/js8wW0owTzht0hHGABh29vjLscY4HfZGkv7hc3FFTmRp9NzY/Ib1uQ36GieAKEjxpHdpCFpcA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -4137,7 +4137,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.21.0
       '@emotion/cache': 11.10.5
-      '@emotion/react': 11.10.6(@types/react@18.0.31)(react@18.2.0)
+      '@emotion/react': 11.10.6(@types/react@18.0.33)(react@18.2.0)
       '@floating-ui/dom': 1.2.5
       '@types/react-transition-group': 4.4.5
       memoize-one: 6.0.0
@@ -4145,7 +4145,7 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-transition-group: 4.4.5(react-dom@18.2.0)(react@18.2.0)
-      use-isomorphic-layout-effect: 1.1.2(@types/react@18.0.31)(react@18.2.0)
+      use-isomorphic-layout-effect: 1.1.2(@types/react@18.0.33)(react@18.2.0)
     transitivePeerDependencies:
       - '@types/react'
     dev: false
@@ -4808,7 +4808,7 @@ packages:
       requires-port: 1.0.0
     dev: true
 
-  /use-isomorphic-layout-effect@1.1.2(@types/react@18.0.31)(react@18.2.0):
+  /use-isomorphic-layout-effect@1.1.2(@types/react@18.0.33)(react@18.2.0):
     resolution: {integrity: sha512-49L8yCO3iGT/ZF9QttjwLF/ZD9Iwto5LnH5LmEdk/6cFmXddqi2ulF0edxTwjj+7mqvpVVGQWvbXZdn32wRSHA==}
     peerDependencies:
       '@types/react': '*'
@@ -4817,7 +4817,7 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      '@types/react': 18.0.31
+      '@types/react': 18.0.33
       react: 18.2.0
     dev: false
 
